@@ -1,0 +1,29 @@
+ .icone {
+     width: 180px;
+     display: flex;
+     margin: 0 auto;
+     margin-top: 100px;
+ }
+
+ .h1co {
+     font-size: 40px;
+     padding-top: 30px;
+     margin-left: 200px;
+ }
+
+ .form_co {
+     padding-left: 500px;
+     margin-top: 100px;
+     font-size: 30px;
+ }
+
+ input {
+     height: 30px;
+     width: 300px;
+
+ }
+
+ .a_co {
+     padding-left: 200px;
+
+ }
