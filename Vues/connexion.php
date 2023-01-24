@@ -1,3 +1,6 @@
+<?php
+session_start()
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,12 +20,18 @@
         <h1 class="h1co">Se Connecter</h1>
     </div>
     <div>
-        <form class="form_co" action="" method="post">
+        <form class="form_co" action="../CodePHP/script-connexion.php" method="post">
             Nom d'utilisateur: <input type="text" name="pseudo"><br>
             Mot de Passe: <input type="text" name="password"><br>
             <input style="margin-left : 370px ; font-size : 20px ; margin-top: 30px; margin-bottom: 15px; "
                 type="submit" value="Se connecter">
         </form>
+        <?php
+        if (isset($_SESSION['error'])) {
+            echo "<div class='error'>" . $_SESSION['error'] . "</div>";
+            unset($_SESSION['error']);
+        }
+        ?>
     </div>
     <a style="padding-left : 985px; font-size:20px" href="inscription.php">S'inscrire</a>
 </body>

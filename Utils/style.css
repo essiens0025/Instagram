@@ -27,3 +27,36 @@
      padding-left: 200px;
 
  }
+
+ .inscri_insta {
+     display: flex;
+     margin: 0 auto;
+     width: 350px;
+ }
+
+ .inscri_table {
+     margin: 0 auto;
+     padding: 5px;
+ }
+
+ table tr td {
+     padding: 5px;
+
+ }
+
+ .border-inscri {
+     width: 500px;
+     display: flex;
+     justify-content: center;
+ }
+
+ .test {
+     margin: 0 auto;
+     border: solid grey 1px;
+     width: 400px;
+     height: 720px;
+ }
+
+ .valid-but {
+     margin-top: 50px;
+ }
