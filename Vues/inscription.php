@@ -27,11 +27,21 @@
                 <tr>
                     <td><input class="myInput" type="text" name="password" value="Choisir votre mot de passe"></td>
                 </tr>
+
                 <tr>
                     <td><input class="valid-but" type="submit" value="Valider"></td>
                 </tr>
             </table>
+
+            <?php
+            if (isset($_GET['error']) && $_GET['error'] == "pseudo_exists") {
+                echo "Le pseudo existe déjà, veuillez en choisir un autre";
+            }
+            ?>
         </form>
+
+
+
     </div>
     <script src="../Utils/script.js"></script>
 </body>

@@ -13,13 +13,11 @@ if ($user) {
     // Pseudo et mot de passe correspondent à une entrée dans la base de données
     // Rediriger vers index.php
     $_SESSION["pseudo"] = $user["pseudo"];
-    header("Location: index.php");
+    header("Location: ../Vues/index.php");
     exit();
 } else {
     // Pseudo ou mot de passe incorrect ou utilisateur non enregistré
-    $_SESSION["error"] = "Votre pseudo ou votre mot de passe est faux ou vous n'avez pas de compte. Il faut en créer un.";
-    header("Location: ../Vues/connexion.php");
+    $_SESSION["error"] = "Votre pseudo ou votre mot de passe est faux veuillez les modifier ou vous n'avez pas de compte. Il faut en créer un.";
+    header("Location: ../Vues/connexioncopy.php");
     exit();
 }
-
-?>

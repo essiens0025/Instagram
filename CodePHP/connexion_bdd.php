@@ -1,14 +1,10 @@
 <?php
 try {
     $mysqlConnection = new PDO(
-        'mysql:host=localhost;
-            dbname=insta_bdd;charset=utf8',
+        'mysql:host=localhost;dbname=insta_bdd;charset=utf8',
         'root',
         ''
     );
-
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-
-?>

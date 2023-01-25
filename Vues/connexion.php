@@ -1,6 +1,6 @@
 <?php
 session_start()
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +23,7 @@ session_start()
         <form class="form_co" action="../CodePHP/script-connexion.php" method="post">
             Nom d'utilisateur: <input type="text" name="pseudo"><br>
             Mot de Passe: <input type="text" name="password"><br>
-            <input style="margin-left : 370px ; font-size : 20px ; margin-top: 30px; margin-bottom: 15px; "
-                type="submit" value="Se connecter">
+            <input style="margin-left : 370px ; font-size : 20px ; margin-top: 30px; margin-bottom: 15px; " type="submit" value="Se connecter">
         </form>
         <?php
         if (isset($_SESSION['error'])) {
