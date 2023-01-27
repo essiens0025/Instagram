@@ -32,7 +32,7 @@ session_start()
                 </td>
 
                 <td>
-                    <input type="text" name="password">
+                    <input type="text" name="pseudo">
                 </td>
             </tr>
 
@@ -43,7 +43,7 @@ session_start()
                 </td>
 
                 <td>
-                    <input type="text" name="pseudo">
+                    <input type="text" name="password">
                 </td>
 
             </tr>

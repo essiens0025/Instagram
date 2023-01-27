@@ -37,6 +37,6 @@ $stmt->execute([
 ]);
 
 // Redirection vers une page de confirmation
-header("Location: ../Vues/connexion.php?message=iscription réussie, veuillez vous authentifier");
+header("Location: ../Vues/connexion.php?message=inscription réussie, veuillez vous authentifier");
 
 exit();

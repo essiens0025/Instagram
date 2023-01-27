@@ -9,7 +9,7 @@
     <title>Inscription</title>
 </head>
 
-<body>
+<body style="background-image:url(../Images/fond-instagram.jpg)">
     <div class="test">
         <img class="inscri_insta" src="../Images/Instagram-Logo.png">
         <p style="text-align:center; font-size:30px">Inscrivez vous !</p>

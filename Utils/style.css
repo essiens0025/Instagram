@@ -5,6 +5,14 @@
      margin-top: 80px;
  }
 
+ .icone-nav {
+     width: 70px;
+     display: flex;
+     margin: 0 auto;
+     margin-top: -20px;
+
+ }
+
  .h1co {
      font-size: 40px;
      text-align: center;
@@ -52,7 +60,7 @@
 
  .test {
      margin: 0 auto;
-     border: solid grey 1px;
+     border: solid black 2px;
      width: 400px;
      height: 720px;
  }
@@ -69,4 +77,50 @@
      height: 35px;
      width: 180px;
 
+ }
+
+ .nav {
+     height: 80px;
+     width: 103%;
+     padding: 25px;
+     margin: 0;
+     background-color: #212121;
+     font-size: 20px;
+     color: whitesmoke;
+     text-decoration: none;
+
+ }
+
+ .div-profil {
+     background-color: aqua;
+     height: 370px;
+ }
+
+ .div-fyp {
+     display: inline-block;
+     margin-left: 37%;
+
+ }
+
+ .pseudo-fyp {
+     margin-bottom: -45px;
+     color: whitesmoke
+ }
+
+ .comm {
+     margin-left: 360px;
+     text-decoration: none;
+
+     color: #962fbf;
+ }
+
+ .h1-fyp {
+     text-align: center;
+     padding-top: 80px;
+     padding-bottom: 80px;
+     color: #d62976;
+ }
+
+ .body-fyp {
+     background: linear-gradient(#201d1d, #212121);
  }

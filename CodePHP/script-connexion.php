@@ -3,21 +3,31 @@ include('connexion_bdd.php');
 
 session_start();
 
-$mysqlConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$stmt = $mysqlConnection->prepare("SELECT * FROM users WHERE pseudo = :pseudo AND password = :password");
-$stmt->bindValue(":pseudo", $_POST["pseudo"]);
-$stmt->bindValue(":password", $_POST["password"]);
-$stmt->execute();
-$user = $stmt->fetch();
-if ($user) {
+
+
+$sqlQuery = 'SELECT * FROM users WHERE pseudo = :pseudo AND `password` = :password';
+
+$userStatement = $mysqlConnection->prepare($sqlQuery);
+$userStatement->execute([
+    'pseudo' => $_POST["pseudo"],
+    'password' => $_POST["password"],
+]);
+
+$user = $userStatement->fetch();
+
+
+if ($user != null) {
     // Pseudo et mot de passe correspondent à une entrée dans la base de données
     // Rediriger vers index.php
     $_SESSION["pseudo"] = $user["pseudo"];
-    header("Location: ../Vues/index.php");
+
+    $_SESSION["id_u"] = $user["id_u"];
+
+    header("Location: ../Vues/fyp.php");
     exit();
 } else {
     // Pseudo ou mot de passe incorrect ou utilisateur non enregistré
     $_SESSION["error"] = "Votre pseudo ou votre mot de passe est faux veuillez les modifier ou vous n'avez pas de compte. Il faut en créer un.";
-    header("Location: ../Vues/connexioncopy.php");
+    header("Location: ../Vues/connexion.php");
     exit();
 }
