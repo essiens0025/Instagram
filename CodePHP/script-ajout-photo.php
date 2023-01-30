@@ -1,29 +1,21 @@
 <?php
 session_start();
+
 // Récupération des données du formulaire
 $file = $_FILES['file'];
 $fileName = $_FILES['file']['name'];
 $fileTmpName = $_FILES['file']['tmp_name'];
 
-var_dump($file);
-var_dump($_GET['id_u']);
+
 
 // Définition du chemin de destination pour enregistrer le fichier
 $path = "/opt/lampp/htdocs/Instagram/Images/";
 
 
-// Enregistrement du fichier dans le répertoire de destination
 
-echo "<br>tmp_name: " . $file;
-echo "<br>file name: " . $fileName;
-
-
-move_uploaded_file($fileTmpName, $path . $fileName);
-echo "<br>Path file name: " . $path . $fileName;
-echo "<br>file tmp name: " . $fileTmpName;
-echo "<br>file name: " . $fileName;
-echo "<br>path: " . $path;
-
+$destination_path = $path;
+$target_path = $destination_path . basename($_FILES['file']['name']);
+@move_uploaded_file($_FILES['file']['tmp_name'], $target_path);
 
 
 // Connexion à la base de données
@@ -32,7 +24,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=insta_bdd", "root", "");
 // Récupération de l'ID de l'utilisateur connecté à partir de la session
 $user_id = $_GET['id_u'];
 
-echo "<br>" . " user_id est : " . $user_id;
+
 
 
 
@@ -46,11 +38,8 @@ try {
 
     // Exécution de la requête
     $stmt->execute();
-
 } catch (Exception $e) {
     die('Erreur:' . $e->getMessage());
-
-
-
 }
-?>
+
+header('location: ../Vues/profil-prive.php');

@@ -28,6 +28,6 @@ if ($user != null) {
 } else {
     // Pseudo ou mot de passe incorrect ou utilisateur non enregistré
     $_SESSION["error"] = "Votre pseudo ou votre mot de passe est faux veuillez les modifier ou vous n'avez pas de compte. Il faut en créer un.";
-    header("Location: ../Vues/connexion.php");
+    header("Location: ../Vues/index.php");
     exit();
 }

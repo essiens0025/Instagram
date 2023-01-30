@@ -12,7 +12,7 @@
 <body style="background-image:url(../Images/fond-instagram.jpg)">
     <div class="test">
         <img class="inscri_insta" src="../Images/Instagram-Logo.png">
-        <p style="text-align:center; font-size:30px">Inscrivez vous !</p>
+        <p style="text-align:center; font-size:30px; margin-top: -16px;">Inscrivez vous !</p>
         <form action="../CodePHP/script-inscription.php" method="post">
             <table class="inscri_table">
                 <tr>
@@ -29,15 +29,17 @@
                 </tr>
 
                 <tr>
+
                     <td><input class="valid-but" type="submit" value="Valider"></td>
+
+                    <?php
+                    if (isset($_GET['error']) && $_GET['error'] == "pseudo_exists") {
+                        echo "<center>Le pseudo existe déjà, veuillez en choisir un autre";
+                    }
+                    ?>
                 </tr>
             </table>
 
-            <?php
-            if (isset($_GET['error']) && $_GET['error'] == "pseudo_exists") {
-                echo "Le pseudo existe déjà, veuillez en choisir un autre";
-            }
-            ?>
         </form>
 
 

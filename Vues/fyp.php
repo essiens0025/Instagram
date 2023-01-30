@@ -25,6 +25,9 @@
     }
     ?>
 
+
+    <script src="../Utils/script.js"></script>
+
 </body>
 
 </html>
