@@ -45,6 +45,7 @@
  .inscri_table {
      margin: 0 auto;
      padding: 5px;
+     margin-top: 20px;
  }
 
  table tr td {
@@ -60,6 +61,7 @@
 
  .test {
      margin: 0 auto;
+     margin-top: 60px;
      border: solid black 2px;
      width: 400px;
 
@@ -69,7 +71,7 @@
      margin: 0 auto;
      border: solid whitesmoke 2px;
      width: 400px;
-     height: 350px;
+     height: 450px;
      margin-bottom: 10px;
  }
 
@@ -95,7 +97,7 @@
      width: 100%;
      padding: 25px;
      margin: 0;
-     background-color: #424141;
+     background-color: #343434;
      font-size: 20px;
      color: whitesmoke;
      text-decoration: none;
@@ -108,38 +110,57 @@
      display: inline-block;
      margin-left: 37%;
 
+
  }
 
  .pseudo-fyp {
-     margin-bottom: -45px;
-     color: whitesmoke
+     color: whitesmoke;
+     text-decoration: none;
+     font-size: 23px;
  }
 
  .comm {
-     margin-left: 360px;
      text-decoration: none;
+     color: #c445f6;
+     margin-left: 320px;
+ }
 
-     color: #962fbf;
+ .position {
+
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     max-width: 500px;
  }
 
  .h1-fyp {
      text-align: center;
-     padding-top: 80px;
-     padding-bottom: 80px;
+     margin-top: 40px;
+     margin-bottom: 40px;
      color: #d62976;
  }
 
  .body-fyp {
-     background: linear-gradient(#201d1d, #212121);
+     background-color: #171717;
  }
 
  .image-ronde {
      width: 100px;
      height: 100px;
-     border: none;
+     border: 3px solid #585757;
      -moz-border-radius: 75px;
      -webkit-border-radius: 750px;
      border-radius: 75px;
+     margin-bottom: 30px;
+ }
+
+ .image-ronde2 {
+     width: 180px;
+     height: 180px;
+     border: 3px solid #585757;
+     -moz-border-radius: 75px;
+     -webkit-border-radius: 750px;
+     border-radius: 100px;
      margin-bottom: 30px;
  }
 
@@ -147,10 +168,17 @@
 
      color: whitesmoke;
 
+     outline-color: #434040;
  }
 
  .comment-box {
      text-align: center;
      margin: 10px;
+
+ }
+
+ .img {
+
+     margin-top: -20px;
 
  }

@@ -28,24 +28,21 @@ function changeTheme() {
 
   if (!isChanged) {
 
-    document.querySelector("#nav").style.backgroundColor = "#9b9090";
-
-
+    document.querySelector("#nav").style.backgroundColor = "#434040";
     document.querySelector("#nav").style.color = '#000000';
 
-    // document.getElementById("nav").style.color = "black";
+    document.querySelector("#fyp").style.backgroundColor = "#f4a460";
+    document.querySelector("#fyp").style.color = 'red';
 
     isChanged = true;
   } else {
 
     document.querySelector("#nav").style.backgroundColor = '#424141';
-
     document.querySelector("#nav").style.color = "white";
 
-    // document.getElementById("profil").style.backgroundColor = "";
-    // document.getElementById("nav").style.backgroundColor = "";
+    document.querySelector("#nav").style.backgroundColor = "#9b9090";
+    document.querySelector("#nav").style.color = '#000000';
 
-    // document.getElementById("nav").style.color = "";
 
     isChanged = false;
   }

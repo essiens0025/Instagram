@@ -40,11 +40,11 @@ include("navbar.php");
             </div>
 
             <div class="col d-flex justify-content-start mt-5">
-                <?php echo '<span style="font-size: 20px; margin-right: 10px;">' . "Votre pseudo :" . ' ' . $user['pseudo'] . '</span>'; ?>
+                <?php echo '<span style="font-size: 30px; margin-right: 10px;">' . "Votre pseudo :" . ' ' . $user['pseudo'] . '</span>'; ?>
             </div>
         </div>
         <div class="row" style="border-bottom: 2px solid white;">
-            <div style="text-align: center;margin-top:10px; margin-right: 200px; font-size: 20px;" class="col">
+            <div style="text-align: center;margin-top:10px; margin-right: 200px; font-size: 30px;" class="col">
                 <?php echo $user['nom'] . ' ' . $user['prenom']; ?>
             </div>
 
@@ -58,37 +58,48 @@ include("navbar.php");
 
 
 
-                <div id="modif" class="test2" style="margin-right: 450px; display: none;">
+                <div id="modif" class="test2" style="margin-right: 450px; margin-top: 20px; display: none;">
                     <p style="text-align:center; margin-top: 20px; font-size:30px">Modifier votre profile !</p>
-                    <br<<br>
-                        <form action="../CodePHP/script-inscription.php" method="post">
-                            <table class="inscri_table">
-                                <tr>
-                                    <td><input class="myInput" type="text" name="nom" value=<?php echo $user['nom']; ?>></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="myInput" type="text" name="prenom" value=<?php echo $user['prenom']; ?>></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="myInput" type="text" name="pseudo" value=<?php echo $user['pseudo']; ?>></td>
-                                </tr>
-                                <tr>
-                                    <td><input class="myInput" type="text" name="password" value=<?php echo $user['password']; ?>></td>
-                                </tr>
+                    <br>
 
-                                <tr>
+                    <form action="../CodePHP/script-modifprofil.php" method="post">
+                        <table class="inscri_table">
+                            <tr>
+                                <td><input class="myInput" type="text" name="id" readonly value=<?php echo $user['id_u']; ?>></td>
 
-                                    <td><input class="valid-but" type="submit" value="Valider"></td>
+                            </tr>
+                            <tr>
+                                <td><input class="myInput" type="text" name="nom" value=<?php echo $user['nom']; ?>></td>
 
-                                    <?php
-                                    if (isset($_GET['error']) && $_GET['error'] == "pseudo_exists") {
-                                        echo "<center>Le pseudo existe déjà, veuillez en choisir un autre";
+                            </tr>
+                            <tr>
+                                <td><input class="myInput" type="text" name="prenom" value=<?php echo $user['prenom']; ?>></td>
+                            </tr>
+                            <tr>
+                                <td><input class="myInput" type="text" name="pseudo" value=<?php echo $user['pseudo']; ?>></td>
+                            </tr>
+                            <tr>
+                                <td><input class="myInput" type="text" name="password" value=<?php echo $user['password']; ?>></td>
+                            </tr>
+
+                            <tr>
+
+                                <td><input class="valid-but" type="submit" value="Valider"></td>
+
+                                <?php
+                                if (isset($_GET['error']) && $_GET['error'] == "pseudo_exists") {
+                                    echo "<center>Le pseudo existe déjà, veuillez en choisir un autre</center>";
+                                } else {
+                                    if (isset($_GET['sucess']) && $_GET['sucess'] == "updated") {
+                                        echo "<center>Modifications faites avec succès</center>";
                                     }
-                                    ?>
-                                </tr>
-                            </table>
+                                }
 
-                        </form>
+                                ?>
+                            </tr>
+                        </table>
+
+                    </form>
 
                 </div>
 
@@ -109,7 +120,7 @@ include("navbar.php");
     </div>
 
     <div>
-        <h2 style="margin-bottom: 20px; margin-top: 20px; text-align: center; color: whitesmoke;">Les 6 derniers postes</h2>
+        <h2 style="margin-bottom: 20px; margin-top: 20px; text-align: center; color: whitesmoke;">Les postes</h2>
     </div>
 
     <?php
@@ -127,28 +138,35 @@ include("navbar.php");
     }
 
     $id_u = $user['id_u'];
-    $query = "SELECT * FROM Photos WHERE id_u = '$id_u' ORDER BY id_p DESC LIMIT 6";
+    $query = "SELECT * FROM Photos WHERE id_u = '$id_u' ORDER BY id_p DESC";
     $result = mysqli_query($conn, $query);
 
+    $num_rows = mysqli_num_rows($result);
 
-    echo '<div class="container">';
-    echo '<div class="row justify-content-center">';
+    if ($num_rows == 0) {
+        echo "<p style='font-size: 25px; text-align: center; color: white'>Vous n'avez pas encore posté</p>";
+    } else {
+        echo '<div class="container">';
+        echo '<div class="row justify-content-center">';
 
-    $i = 0;
-    while ($row = mysqli_fetch_assoc($result)) {
-        if ($i % 3 == 0 && $i != 0) {
-            echo '</div><div class="row justify-content-center" style="margin-top: 20px">';
+        $i = 0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            if ($i % 3 == 0 && $i != 0) {
+                echo '</div><div class="row justify-content-center" style="margin-top: 20px">';
+            }
+            echo '<div class="col-4">';
+            echo '<img style="border: 3px solid #8d8c8c;width: 250px; height: 250px;"; class="img-fluid mx-auto d-block" src="../Images/' . $row['nom_p'] . '"><br>';
+            echo '</div>';
+            $i++;
         }
-        echo '<div class="col-4">';
-        echo '<img style="width: 250px; height: 200px"; class="img-fluid mx-auto d-block" src="../Images/' . $row['nom_p'] . '">';
+
         echo '</div>';
-        $i++;
+        echo '</div>';
     }
 
-    echo '</div>';
-    echo '</div>';
 
     mysqli_close($conn);
+
     ?>
 
 

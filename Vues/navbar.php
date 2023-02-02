@@ -40,11 +40,7 @@ include("../CodePHP/script-profil-prive.php");
                 <img class="icone-nav" src="../Images/Instagram_icon.png.webp">
             </div>
             <div class="col-4" style="margin-top: 20px;">
-                <a style="text-decoration: none; font-size:30px; color:#4f5bd5" href="profil-prive.php">Mon Profil</a>
-
-
-                <img src="../Images/jour-nuit.webp" style="width: 15%; margin-left:150px; margin-right:-20px" onclick="changeTheme()">
-
+                <a style="text-decoration: none; font-size:30px; color:#36b6da " href="profil-prive.php">Mon Profil</a>
 
             </div>
 

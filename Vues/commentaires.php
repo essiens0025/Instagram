@@ -9,7 +9,7 @@
     <link href="../Utils/barrenav.css" rel="stylesheet">
 </head>
 
-<body id="comments" style="background: #201d1d; color: whitesmoke;">
+<body style="background: #201d1d; color: whitesmoke;">
     <?php
     include("navbar.php");
 
@@ -41,7 +41,7 @@
         if ($conn->query($sql) === TRUE) {
             // Stocker le message de succès dans une variable de session
             $_SESSION['flash_message'] = "Commentaire ajouté avec succès";
-            header("location: fyp.php");
+            header("location: commentaires.php?id_p=$id_p");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -69,13 +69,13 @@
     <div style="display: flex; justify-content: center;border-bottom: 2px solid white; margin-bottom: 20px;">
         <form method="post" action="">
             <textarea rows='3' cols='50' name='commentaire'></textarea><br><br>
-            <button>Valider</button>
+            <button class="mb-3">Valider</button>
         </form>
     </div>
 
 
 
-
+    <?php include '../CodePHP/connexion_bdd.php' ?>
     <?php
     // Connexion à la base de données
     $servername = "localhost";
@@ -91,27 +91,30 @@
 
     $id_p = $_GET['id_p'];
 
+
     // Sélection des 10 derniers commentaires correspondant à l'id_p
-    $sql = "SELECT commentaire FROM Commentaires WHERE id_p = $id_p ORDER BY id_m DESC LIMIT 10";
-    $result = $conn->query($sql);
+    $sql = "SELECT commentaire FROM Commentaires WHERE id_p = ? ORDER BY id_m DESC LIMIT 10";
+    $comStatement = $mysqlConnection->prepare($sql);
+    $comStatement->execute([$id_p]);
+    $coms = $comStatement->fetchAll();
+
 
     ?>
 
     <div style="margin-left: 50px;">
 
         <?php
-        if ($result->num_rows > 0) {
-            // Affichage des commentaires
-            while ($row = $result->fetch_assoc()) {
+        if (empty($coms)) {
+            echo "<div class='comment-box' style='width: 70%; margin: 0 auto; padding: 10px; border: 2px solid whitesmoke; border-radius: 7px'>";
+            echo "Pas de commentaire";
+            echo "</div><br>";
+        } else {
+            foreach ($coms as $com) {
                 echo "<div class='comment-box' style='width: 70%; margin: 0 auto; padding: 10px; border: 2px solid whitesmoke; border-radius: 7px'>";
-                echo $row['commentaire'];
+                echo $com['commentaire'];
                 echo "</div><br>";
             }
-        } else {
-            echo "Aucun commentaire pour cette photo";
         }
-
-        $conn->close();
         ?>
 
     </div>
