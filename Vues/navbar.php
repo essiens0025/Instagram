@@ -37,7 +37,7 @@ include("../CodePHP/script-profil-prive.php");
                 ?>
             </div>
             <div class="col-4">
-                <img class="icone-nav" src="../Images/Instagram_icon.png.webp">
+                <a href="fyp.php"><img class=" icone-nav" src="../Images/Instagram_icon.png.webp"></a>
             </div>
             <div class="col-4" style="margin-top: 20px;">
                 <a style="text-decoration: none; font-size:30px; color:#36b6da " href="profil-prive.php">Mon Profil</a>
