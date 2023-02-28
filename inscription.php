@@ -9,11 +9,11 @@
     <title>Inscription</title>
 </head>
 
-<body style="background-image:url(../Images/fond-instagram.jpg)">
+<body style="background-image:url(Images/fond-instagram.jpg)">
     <div class="test">
-        <img class="inscri_insta" src="../Images/Instagram-Logo.png">
+        <img class="inscri_insta" src="Images/Instagram-Logo.png">
         <p style="text-align:center; font-size:30px; margin-top: -16px;">Inscrivez vous !</p>
-        <form action="../CodePHP/script-inscription.php" method="post">
+        <form action="CodePHP/script-inscription.php" method="post">
             <table class="inscri_table">
                 <tr>
                     <td><input class="myInput" type="text" name="nom" value="Entrez votre nom"></td>
@@ -45,7 +45,7 @@
 
 
     </div>
-    <script src="../Utils/script.js"></script>
+    <script src="Utils/script.js"></script>
 </body>
 
 </html>

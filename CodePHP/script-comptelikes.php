@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=insta_bdd', 'root', '');
+$pdo = new PDO('mysql:host=57.128.65.58;dbname=julien_ahmed_instagram', 'julien', 'dyhh3rkhho');
 
 
 // Vérifier si l'utilisateur a déjà aimé la photo
@@ -11,7 +11,7 @@ $stmt->execute(array(
   ':id_u' => $_GET['id_u'],
 ));
 if ($stmt->rowCount() > 0) {
-  header("Location: ../Vues/fyp.php?error=Vous avez déjà liké la photo");
+  header("Location: fyp.php?error=Vous avez déjà liké la photo");
 } else {
 
 
@@ -36,6 +36,6 @@ if ($stmt->rowCount() > 0) {
 
   // Afficher le nombre de likes pour chaque photo
   foreach ($likes as $like) {
-    header("Location: ../Vues/fyp.php?Likes={$like['Likes']}");
+    header("Location: fyp.php?Likes={$like['Likes']}");
   }
 }

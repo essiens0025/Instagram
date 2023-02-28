@@ -19,7 +19,7 @@ $target_path = $destination_path . basename($_FILES['avatar']['name']);
 
 
 // Connexion à la base de données
-$pdo = new PDO("mysql:host=localhost;dbname=insta_bdd", "root", "");
+$pdo = new PDO("mysql:host=57.128.65.58;dbname=julien_ahmed_instagram", "julien", "dyhh3rkhho");
 
 // Récupération de l'ID de l'utilisateur connecté à partir de la session
 $user_id = $_GET['id_u'];
@@ -38,4 +38,4 @@ try {
     die('Erreur:' . $e->getMessage());
 }
 
-header('location: ../Vues/profil-prive.php');
+header('location: profil-prive.php');

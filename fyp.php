@@ -14,8 +14,8 @@
     <?php
 
     include("navbar.php");
-    include("../CodePHP/script-fyp.php");
-    include("../CodePHP/connexion_bdd.php");
+    include("CodePHP/script-fyp.php");
+    include("CodePHP/connexion_bdd.php");
 
     echo "<h1 class='h1-fyp'>For You Page</h1>";
 
@@ -28,9 +28,9 @@
     foreach ($photos as $photo) {
         echo "<div class='div-fyp'>";
         echo "<a class='pseudo-fyp' href='profil-public.php?pseudo=" . $photo["pseudo"] . "'>" . $photo["pseudo"] . "</a>" . "<br>" . "<br>";
-        echo "<img class='img' style='width:500px;' src='" . '../Images/' . $photo["nom_p"] . "' alt='photo'><br>";
+        echo "<img class='img' style='width:500px;' src='" . 'Images/' . $photo["nom_p"] . "' alt='photo'><br>";
         echo "<div class='position'>";
-        echo "<form style='width:50px' method='post' action='../CodePHP/script-comptelikes.php?id_u=" . $user['id_u'] . "&&id_p=" . $photo['id_p'] . "'>
+        echo "<form style='width:50px' method='post' action='CodePHP/script-comptelikes.php?id_u=" . $user['id_u'] . "&&id_p=" . $photo['id_p'] . "'>
                     <button type='submit' name='Likes'><img style='width:35px;' src='../Images/like.png'></button>
             </form>";
 
@@ -53,7 +53,7 @@
     ?>
 
 
-    <script src="../Utils/script.js"></script>
+    <script src="Utils/script.js"></script>
 
 </body>
 

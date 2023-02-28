@@ -16,7 +16,7 @@ $query->bindParam(':pseudo', $pseudo);
 $query->execute();
 
 if ($query->rowCount() > 0) {
-    header("Location: ../Vues/inscription.php?error=pseudo_exists");
+    header("Location: inscription.php?error=pseudo_exists");
     exit();
 }
 
@@ -37,6 +37,6 @@ $stmt->execute([
 ]);
 
 // Redirection vers une page de confirmation
-header("Location: ../Vues/index.php?message=Inscription réussie, veuillez vous authentifier");
+header("Location: index.php?message=Inscription réussie, veuillez vous authentifier");
 
 exit();

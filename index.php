@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../Utils/barrenav.css" rel="stylesheet">
+    <link href="Utils/barrenav.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,10 +25,10 @@
         <title>Se connecter</title>
     </head>
 
-    <body style="background-image:url(../Images/fond-instagram.jpg); background-repeat: no-repeat; ">
+    <body style="background-image:url(Images/fond-instagram.jpg); background-repeat: no-repeat; ">
 
         <div>
-            <img class="icone" src="../Images/Instagram_icon.png.webp">
+            <img class="icone" src="Images/Instagram_icon.png.webp">
         </div>
         <div>
             <h1 class="h1co">Se Connecter</h1>
@@ -52,7 +52,7 @@
 
         <div style="display: flex; justify-content: center;" ;>
 
-            <form class="form_co" action="../CodePHP/script-connexion.php" method="post">
+            <form class="form_co" action="CodePHP/script-connexion.php" method="post">
 
                 <table class="tabcenter">
 

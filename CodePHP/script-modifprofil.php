@@ -1,10 +1,10 @@
 <?php
 
 // Connexion à la base de données
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "insta_bdd";
+$host = "57.128.65.58";
+$user = "julien";
+$password = "dyhh3rkhho";
+$dbname = "julien_ahmed_instagram";
 
 $conn = mysqli_connect($host, $user, $password, $dbname);
 
@@ -24,7 +24,7 @@ $sql = "SELECT * FROM users WHERE pseudo='$pseudo' AND id_u!='$id'";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    header("Location: ../Vues/profil-prive.php?error=pseudo_exists");
+    header("Location: profil-prive.php?error=pseudo_exists");
     exit();
 }
 
@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
 $sql = "UPDATE users SET nom='$nom', prenom='$prenom', pseudo='$pseudo', password='$password' WHERE id_u='$id'";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: ../Vues/profil-prive.php?sucess=updated");
+    header("Location: profil-prive.php?sucess=updated");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

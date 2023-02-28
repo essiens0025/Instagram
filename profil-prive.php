@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil-privé</title>
-    <link href="../Utils/barrenav.css" rel="stylesheet">
+    <link href="Utils/barrenav.css" rel="stylesheet">
 </head>
 
 
 <?php
-include("../CodePHP/script-profil-prive.php");
+include("CodePHP/script-profil-prive.php");
 include("navbar.php");
 ?>
 
@@ -24,15 +24,15 @@ include("navbar.php");
 
 
                 if (!empty($user['avatar']) && $user['avatar'] !== NULL) {
-                    echo '<img class="image-ronde" src="../Images/' . $user['avatar'] . '"/>';
+                    echo '<img class="image-ronde" src="Images/' . $user['avatar'] . '"/>';
                 } else {
-                    echo '<img class="image-ronde" src="../Images/avatartype.png"/>';
+                    echo '<img class="image-ronde" src="Images/avatartype.png"/>';
                 }
 
                 ?>
 
 
-                <form method="post" action="../CodePHP/script-affichageavatar.php?id_u=<?= $user['id_u'] ?>" enctype="multipart/form-data">
+                <form method="post" action="CodePHP/script-affichageavatar.php?id_u=<?= $user['id_u'] ?>" enctype="multipart/form-data">
                     <input type="file" name="avatar" id="avatar"><br><br>
                     <input type="submit" value="Modifier votre photo de profil">
                 </form>
@@ -62,7 +62,7 @@ include("navbar.php");
                     <p style="text-align:center; margin-top: 20px; font-size:30px">Modifier votre profile !</p>
                     <br>
 
-                    <form action="../CodePHP/script-modifprofil.php" method="post">
+                    <form action="CodePHP/script-modifprofil.php" method="post">
                         <table class="inscri_table">
                             <tr>
                                 <td><input class="myInput" type="text" name="id" readonly value=<?php echo $user['id_u']; ?>></td>
@@ -104,7 +104,7 @@ include("navbar.php");
                 </div>
 
 
-                <form action="../CodePHP/script-ajout-photo.php?id_u=<?= $user['id_u'] ?>" method="post" enctype="multipart/form-data">
+                <form action="CodePHP/script-ajout-photo.php?id_u=<?= $user['id_u'] ?>" method="post" enctype="multipart/form-data">
 
                     <h3 style="margin-top: 20px;">Ajoutez une photo</h3><br>
 
@@ -124,10 +124,10 @@ include("navbar.php");
     </div>
 
     <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "insta_bdd";
+    $servername = "57.128.65.58";
+    $username = "julien";
+    $password = "dyhh3rkhho";
+    $dbname = "julien_ahmed_instagram";
 
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -171,7 +171,7 @@ include("navbar.php");
 
 
 
-    <script src="../Utils/script.js"></script>
+    <script src="Utils/script.js"></script>
 
 </body>
 

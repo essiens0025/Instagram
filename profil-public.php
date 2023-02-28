@@ -11,9 +11,9 @@
 
 
 <?php
-include("../CodePHP/script-profil-prive.php");
+include("CodePHP/script-profil-prive.php");
 include("navbar.php");
-include("../CodePHP/connexion_bdd");
+include("CodePHP/connexion_bdd");
 ?>
 
 <body id="ppbg" style="background: #201d1d;">
@@ -40,7 +40,7 @@ include("../CodePHP/connexion_bdd");
                     echo '' . $pseud['nom'] . ' ' . $pseud['prenom'] . '</p>';
                 } else {
 
-                    echo '<img class="image-ronde" src="../Images/avatartype.png"/>';
+                    echo '<img class="image-ronde" src="Images/avatartype.png"/>';
                 }
 
                 ?>
@@ -60,10 +60,10 @@ include("../CodePHP/connexion_bdd");
         </div>
 
         <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "insta_bdd";
+        $servername = "57.128.65.58";
+        $username = "julien";
+        $password = "dyhh3rkhho";
+        $dbname = "julien_ahmed_instagram";
 
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -106,7 +106,7 @@ include("../CodePHP/connexion_bdd");
 
 
 
-        <script src="../Utils/script.js"></script>
+        <script src="Utils/script.js"></script>
 
 </body>
 
